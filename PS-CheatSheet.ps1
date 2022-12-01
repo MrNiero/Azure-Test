@@ -1,5 +1,5 @@
-<# Example demo content for Terraform
-John Savill 5/25/2020 #>
+<# Terraform / Powershell Cheat Sheet 
+based on John Savill's#>
 
 $SubID = '<Sub ID>'
 
