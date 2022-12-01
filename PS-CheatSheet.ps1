@@ -1,13 +1,18 @@
 <# Terraform / Powershell Cheat Sheet 
 based on John Savill's#>
 
-$SubID = '<Sub ID>'
+winget install -e --id Microsoft.AzureCLI
 
-New-AzResourceGroup -Location southcentralus -Name 'RG-SCUSTFStorage'
+az login
+Connect-AzAccount
+
+$SubID = '6b4dde27-0139-4f33-867b-fb156e61a5de'
+
+New-AzResourceGroup -Location brazilsouth -Name 'RG-TFStorage'
 
 #if you wanted to create a SP for use by Terraform
 #https://www.terraform.io/docs/providers/azurerm/guides/service_principal_client_secret.html
-az ad sp create-for-rbac --role="Contributor" --scopes="/subscriptions/$SubID"
+az ad sp create-for-rbac --name="RBACAcct-SP" --role="Contributor" --scopes="/subscriptions/$SubID"
 #would output JSON block you can then use values in provider section of main.tf or define as environment variables
 
 #Define base
@@ -17,7 +22,7 @@ $GitBasePath = 'C:\Tools\Git\Azure-Test'
 #Install from https://www.terraform.io/downloads.html and added to user path
 #Azure CLI installed and logged in via az login
 
-Set-Location $GitBasePath\IntroBasicDeclarative
+Set-Location $GitBasePath\Azure-Test
 
 terraform fmt  #make my files formatted correctly and will fix all tf files in this folder
 

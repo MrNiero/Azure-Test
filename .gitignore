@@ -7,3 +7,6 @@
 
 # plan files
 planout
+
+# temp files
+*temp
