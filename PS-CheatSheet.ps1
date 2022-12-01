@@ -11,7 +11,7 @@ az ad sp create-for-rbac --role="Contributor" --scopes="/subscriptions/$SubID"
 #would output JSON block you can then use values in provider section of main.tf or define as environment variables
 
 #Define base
-$GitBasePath = 'C:\Users\john\OneDrive\projects\GIT\RandomStuff\TerraformwithAzure'
+$GitBasePath = 'C:\Tools\Git\Azure-Test'
 
 #Terraform Demo
 #Install from https://www.terraform.io/downloads.html and added to user path
